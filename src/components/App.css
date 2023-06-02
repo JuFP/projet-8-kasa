@@ -1,5 +1,5 @@
 * {
-  margin: auto;
+  margin: 0 auto;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
@@ -80,6 +80,7 @@ i {
   width: 340px;
   height: 340px;
   position: relative;
+  cursor: pointer;
 }
 .myCards__thumbnail {
   width: 100%;
@@ -98,7 +99,7 @@ i {
 /* style collapse page about  */
 .collapse {
   max-width: 1023px;
-  margin-bottom: 33px;
+  margin-bottom: 20px;
 }
 .collapse__title {
   background: #FF6060;
@@ -116,7 +117,22 @@ i {
   border-radius: 5px;
   border: none;
 }
+.collapse__icon {
+  margin: 0;
+  display: flex;
+}
+.fa-chevron-down {
+  font-size: 24px;
+}
+.collapse.active .collapse__icon {
+  transform: rotate(180deg);
+}
 .collapse__content {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 800ms ease-in-out;
   background-color: #F6F6F6;
   color: #FF6060;
   padding: 27px 18px 18px 18px;
@@ -124,6 +140,31 @@ i {
   font-size: 24px;
   line-height: 34.22px;
   border-radius: 0 0 5px 5px;
+}
+.collapse.active .collapse__content {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+}
+/* style carousel  */
+.carousel {
+  max-width: 1240px;
+  min-height: 415px;
+  display: flex;
+  align-items: center; 
+  border: 1px solid salmon; 
+}
+.carousel__img {
+  object-fit: cover;
+}
+.arrow-left, .arrow-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 23px;
+  font-size: 79px;
+  color: pink;
+  cursor: pointer;
 }
 /* style footer  */
 .footer {
