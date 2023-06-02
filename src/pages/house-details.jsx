@@ -5,7 +5,7 @@ import Footer from '../components/Footer.jsx'
 import Carousel from '../components/Carousel';
 
 const HouseDetails = () => {
-    const myCarousels = datas.map((element, index) => (<Carousel title={element.title} pictures={element.pictures}/>));
+    const myCarousels = datas.map((element) => (<Carousel title={element.title} pictures={element.pictures}/>));
     return (
         <React.Fragment>
             <Banner displayCover={false}/>
