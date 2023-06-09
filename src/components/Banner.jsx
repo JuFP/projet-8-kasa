@@ -15,7 +15,7 @@ function Banner ({displayCover, displayTxt, bannerImg}) {
                     <li><NavLink to="/about">À Propos</NavLink></li>   
                 </ul>
             </nav>
-            {/*afficher ou non la banière avec image+txt:*/}
+            {/*afficher ou non la bannière avec image+txt:*/}
             {displayCover && (
             <div className='bannerCover'>
                 <img src={bannerImg} className='bannerCover__img' alt="paysage de bord de mer"/>
