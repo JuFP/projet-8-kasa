@@ -1,6 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
 function Collapse({title, content}) {
     
@@ -10,18 +8,15 @@ function Collapse({title, content}) {
     }
     return (
         <React.Fragment>
-        <div className={`collapse ${active && "active"}`}>
-            <button className='collapse__title' onClick={openChevron}>
+        <div className={`collapseAbout ${active && "active"}`}>
+            <button className='collapseAbout__title' onClick={openChevron}>
                 {title}
-                <span className='collapse__icon'><i className="fa-solid fa-chevron-up"></i></span>
+                <span className='collapseAbout__icon'><i className="fa-solid fa-chevron-up"></i></span>
             </button>
-            <p className='collapse__content'>{content}</p>
+            <p className='collapseAbout__content'>{content}</p>
         </div>
         </React.Fragment>
     );
 }
-Collapse.propTypes = {
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-}
+
 export default Collapse;

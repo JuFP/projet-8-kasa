@@ -9,7 +9,7 @@ import bannerHome from '../assets/banner-home.png';
 const Home = () => {
   
     const myCards = datas.map((element, index) => (
-      <Link key={index} to={`/house-details/${index}`}>
+      <Link key={index} to={`/house-details/${element.id}`}>
         <Card title={element.title} cover={element.cover}/>
       </Link>
     ));
@@ -19,9 +19,8 @@ const Home = () => {
         <div>
           <Banner displayCover={true} displayTxt={true} bannerImg={bannerHome} />
         </div>
-        <div>
-          <div className="myCards">{myCards}</div>
-        </div>
+        <div className="myCards">
+          {myCards}</div>
         <Footer />
       </React.Fragment>
     );

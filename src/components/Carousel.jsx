@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 
 function Carousel({ pictures, title }) {
   const [index, setIndex] = useState(0);
@@ -44,10 +43,6 @@ function Carousel({ pictures, title }) {
 
     </React.Fragment>
   );
-}
-Carousel.propTypes = {
-  pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
-  title: PropTypes.string.isRequired,
 }
 
 export default Carousel;
