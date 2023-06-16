@@ -10,7 +10,6 @@ const HouseDetails = () => {
 
     const routeParams = useParams();
     const found = datas.find(element => element.id === routeParams.id); // recherche des éléments en fonction de leur id//
-    const notation = []; // tableau qui va stocker le nb d'icones//
     
     const flatTags = found.tags.map ((tag, index) => (
         <p key={index} className='flatTags'>{tag}</p>
@@ -18,15 +17,25 @@ const HouseDetails = () => {
     const equipmentsList = found.equipments.map ((equipment, index) => (
         <p key={index} className='equipment'>{equipment}</p>
     )) ; // génération d'un p pour chaque élément du tableau equipments//
+    
+    const notation = []; // tableau qui va stocker le nb d'icones//
 
-
+    const totalStars = 5;
+    const redStars = found.rating;
+    const grayStars = totalStars - redStars;
 
     if (found && found.rating) { // trouver l'object rating//
+
     for (
         let i = 0; //compteur initié à 0//
         i < found.rating; i++) { //tant que i est < à la valeur de rating, incrémentation//
-        notation.push(<i key={i} className="fa-solid fa-star"></i> ); //ajout d'un <i à chaque boucle//
+        notation.push(<i key={i} className="fa-solid fa-star fa-red"></i> ); //ajout d'un <i à chaque boucle//
         }
+    }
+    for (
+        let i = 0; 
+        i < grayStars; i++) { //tant que i est < à la valeur grayStars, incrémentation//
+        notation.push(<i key={redStars + i} className="fa-solid fa-star fa-gray"></i>);
     }
 
     return (
