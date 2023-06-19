@@ -1,4 +1,5 @@
 import React from 'react';
+
 function Card ({title, cover}) {
     return (
         <div className="card">

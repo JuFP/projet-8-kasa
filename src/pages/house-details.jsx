@@ -1,16 +1,27 @@
 import datas from '../datas/data.json';
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import Banner from '../components/Banner';
-import Footer from '../components/Footer.jsx'
+import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
 import Collapse from '../components/Collapse';
 
 const HouseDetails = () => {
 
     const routeParams = useParams();
+    const navigate = useNavigate();
     const found = datas.find(element => element.id === routeParams.id); // recherche des éléments en fonction de leur id//
     
+    useEffect(() => {
+        if (!found) {
+            navigate ("/error");
+        }
+        }, [found, navigate]);
+        console.log("hello", found)
+    if (!found) {
+        return null
+    }
+
     const flatTags = found.tags.map ((tag, index) => (
         <p key={index} className='flatTags'>{tag}</p>
     )) ; // génération d'un p pour chaque élément du tableau tags//
@@ -18,8 +29,8 @@ const HouseDetails = () => {
         <p key={index} className='equipment'>{equipment}</p>
     )) ; // génération d'un p pour chaque élément du tableau equipments//
     
+    
     const notation = []; // tableau qui va stocker le nb d'icones//
-
     const totalStars = 5;
     const redStars = found.rating;
     const grayStars = totalStars - redStars;
@@ -39,7 +50,7 @@ const HouseDetails = () => {
     }
 
     return (
-        <React.Fragment>
+        <div>
             <Banner displayCover={false}/>
             <Carousel pictures={found.pictures}/>
             <div className='detailsArea'>
@@ -69,7 +80,7 @@ const HouseDetails = () => {
                 </div>
             </div>
             <Footer/>
-        </React.Fragment>
+        </div>
     );
 }
 export default HouseDetails;

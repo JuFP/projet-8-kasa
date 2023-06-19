@@ -176,6 +176,7 @@ i {
   right: 23.36px;
 }
 .counter-img{
+  font-variant-numeric: tabular-nums;
   position: absolute;
   bottom: 24px;
   left: 50%;
@@ -589,7 +590,6 @@ i {
     font-size: 14px;
     line-height: 19.96px;
   }
-
   .flatTagsArea {
     flex-wrap: wrap;
     margin-top: 15px;

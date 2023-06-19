@@ -24,7 +24,7 @@ function Carousel({ pictures, title }) {
 
   const slideCounter = (index + 1) + '/' + allSlides; //format du compteur de slides//
   return (
-    <React.Fragment>
+    <div>
       <div className="carousel">
           {allSlides > 1 && (
           <span className="arrow arrow-left" onClick={leftClick}><i className="fa-sharp fa-solid fa-chevron-left"></i></span>
@@ -40,8 +40,7 @@ function Carousel({ pictures, title }) {
           <div className="counter-img">{slideCounter}</div> //affichage de la div si le nb de slides >0//
           )}
       </div>
-
-    </React.Fragment>
+    </div>
   );
 }
 

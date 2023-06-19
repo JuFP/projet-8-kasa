@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../components/Banner';
-import Footer from '../components/Footer.jsx'
+import Footer from '../components/Footer'
 
 const Error = () => {
     return (
-        <React.Fragment>
+        <div>
             <Banner displayCover={false}/>
             <div className="error">
                 <p>404</p>
@@ -13,7 +13,7 @@ const Error = () => {
                 <Link to="/" className='returnHome'>Retourner sur la page d'accueil</Link>
             </div>
             <Footer/>
-        </React.Fragment>
+        </div>
     );
 }
 export default Error;

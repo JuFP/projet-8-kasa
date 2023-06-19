@@ -1,10 +1,9 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Home from '../pages/home.jsx';
-import About from '../pages/about.jsx';
-import Error from '../pages/error-404.jsx';
-import HouseDetails from '../pages/house-details.jsx';
-
+import Home from '../pages/home';
+import About from '../pages/about';
+import Error from '../pages/error-404';
+import HouseDetails from '../pages/house-details';
 
 function App() {
   return (

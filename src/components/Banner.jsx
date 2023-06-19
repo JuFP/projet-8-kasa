@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 function Banner ({displayCover, displayTxt, bannerImg}) {
     return (
-        <React.Fragment>
+        <div>
             <nav id='navBar'>
                 <div className='logoHeader'>
                     <Link to="/" ><img src={logoKasa} alt="logo kasa"/></Link>
@@ -22,7 +22,7 @@ function Banner ({displayCover, displayTxt, bannerImg}) {
                 {displayTxt && <p className='bannerCover__txt'>Chez vous, partout et ailleurs</p>}
             </div>
             )}
-        </React.Fragment>
+        </div>
     );
 }
 
